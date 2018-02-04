@@ -217,9 +217,9 @@ Usage:
     notes open|o                          # Open your notes directory
     notes open|o <name>                   # Open a note for editing by full name
     notes rm [-r | --recursive] <name>    # Remove note, or folder if -r or --recursive is given
-    notes cat <name>                      # Display note
+    notes cat|c <name>                    # Display note
     echo <name> | notes open|o            # Open all note filenames piped in
-    echo <name> | notes cat               # Display all note filenames piped in
+    echo <name> | notes cat|c             # Display all note filenames piped in
     notes --help                          # Print this usage information
 
 'command|c' means you can use 'command' or the equivalent shorthand alias 'c'
@@ -261,7 +261,7 @@ main() {
         "rm" )
             cmd="remove_note"
             ;;
-        "cat" )
+        "cat"|"c" )
             cmd="handle_multiple_notes cat"
             ;;
         --help | -help | -h )
